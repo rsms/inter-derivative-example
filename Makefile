@@ -19,12 +19,12 @@ $(UFODIR)/$(FAMILY)Inter.glyphs: $(FAMILY)Inter.glyphspackage | $(UFODIR)
 	$(BIN)/python3 build/venv/bin/glyphspkg -o $(dir $@) $^
 
 # features
-inter/features: $(wildcard inter/features/*)
+inter/src/features: $(wildcard inter/src/features/*)
 	@touch "$@"
 	@true
 $(UFODIR)/features: inter/features
 	@mkdir -p $(UFODIR)
-	@ln -sf ../../inter/features $(UFODIR)/features
+	@ln -sf ../../inter/src/features $(UFODIR)/features
 
 $(UFODIR)/%.designspace: $(UFODIR)/%.glyphs $(UFODIR)/features
 	$(BIN)/fontmake -o ufo -g $< --designspace-path $@ \
