@@ -1,0 +1,3 @@
+[submodule "inter"]
+	path = inter
+	url = https://github.com/rsms/inter.git
